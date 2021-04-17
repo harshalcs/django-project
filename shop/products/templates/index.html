@@ -1,0 +1,39 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+ <h1 class="text-center p-5">Stock Details</h1>
+
+<div class="container">
+
+                    <table class="table">
+                      <thead class="table-info">
+                        <tr>
+
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Stock</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                      </thead>
+
+                        {% for product in products %}
+                          <tbody>
+                            <tr>
+
+                              <td>{{product.name}}</td>
+                              <td>{{product.price}}</td>
+                              <td>{{product.stock}}</td>
+                                <td> <img src="{{product.image}}" style="height:60px; width:60px"> </td>
+
+                            </tr>
+
+                          </tbody>
+
+
+                        {% endfor %}
+                    </table>
+</div>
+
+
+{% endblock %}
